@@ -7,9 +7,10 @@ import com.google.gson.reflect.TypeToken
 import org.json.JSONObject
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Query
 import retrofit2.http.Url
 
-const val STEAM_API_KEY = BuildConfig.STEAM_API_KEY
+const val STEAM_API_KEY = BuildConfig.STEAM_KEY
 
 
 interface ApiService {
@@ -23,4 +24,7 @@ interface ApiService {
     suspend fun getHeroesInfo(): Response<JsonElement>
     @GET("https://api.steampowered.com/IEconDOTA2_570/GetGameItems/v0001/?key=$STEAM_API_KEY")
     suspend fun getItemsInfo(): Response<JsonElement>
+    @GET
+    suspend fun getItemsImage(@Url url:String): Response<String>
 }
+
