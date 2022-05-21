@@ -130,7 +130,7 @@ class LastMatch(){
                     val hero = heroesArray.get(i).asJsonObject
                     if(hero.get("id").toString() == id){
                         val heroNameParsed = hero.get("name").toString().substringAfter("npc_dota_hero_").replace("\"","")
-                        val heroUrlImage = "https://cdn.dota2.com/apps/dota2/images/heroes/"+heroName+"_full.png"
+                        val heroUrlImage = "https://cdn.dota2.com/apps/dota2/images/heroes/"+heroNameParsed+"_full.png"
                         heroImage = heroUrlImage
                         heroName = heroNameParsed
                         break
