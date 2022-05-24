@@ -18,10 +18,9 @@ class LastMatch(){
     var gameResult: String = ""
     var kdaInfo: String = "" //kill/death/assisted = kda
 
-    init {
-        getMatchInfo("336204238")
+    fun updateInfo(matchId: String){
+        getMatchInfo(matchId)
     }
-
 
     //get retrofit instance
     private fun getRetrofitOpenDota(): Retrofit {
